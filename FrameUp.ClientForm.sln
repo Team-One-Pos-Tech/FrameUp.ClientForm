@@ -5,13 +5,13 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5DD78F6-FB95-415E-B914-F913B2B75EB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Api", "FrameUp.ClientForm.Api\FrameUp.ClientForm.Api.csproj", "{F5296FD7-5D5E-43DA-BB02-35BE89168DCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Api", "src\FrameUp.ClientForm.Api\FrameUp.ClientForm.Api.csproj", "{F5296FD7-5D5E-43DA-BB02-35BE89168DCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Application", "FrameUp.ClientForm.Application\FrameUp.ClientForm.Application.csproj", "{17167651-6A42-4F1D-B141-B2E463F000B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Application", "src\FrameUp.ClientForm.Application\FrameUp.ClientForm.Application.csproj", "{17167651-6A42-4F1D-B141-B2E463F000B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Domain", "FrameUp.ClientForm.Domain\FrameUp.ClientForm.Domain.csproj", "{A9FBC12C-6112-4A90-8870-59D005FADAF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Domain", "src\FrameUp.ClientForm.Domain\FrameUp.ClientForm.Domain.csproj", "{A9FBC12C-6112-4A90-8870-59D005FADAF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Infra", "FrameUp.ClientForm.Infra\FrameUp.ClientForm.Infra.csproj", "{B7ADC783-8066-45D2-ACD1-06153F24FA4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Infra", "src\FrameUp.ClientForm.Infra\FrameUp.ClientForm.Infra.csproj", "{B7ADC783-8066-45D2-ACD1-06153F24FA4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
