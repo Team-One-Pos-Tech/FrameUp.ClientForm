@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameUp.ClientForm.Domain",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameUp.ClientForm.Infra", "src\FrameUp.ClientForm.Infra\FrameUp.ClientForm.Infra.csproj", "{B7ADC783-8066-45D2-ACD1-06153F24FA4F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AB1E3A4D-3BCB-45C5-A78B-91955CF48665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Test", "FrameUp.ClientForm.Test\FrameUp.ClientForm.Test.csproj", "{2EAA9508-1505-4082-A130-1801B8C18863}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{B7ADC783-8066-45D2-ACD1-06153F24FA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7ADC783-8066-45D2-ACD1-06153F24FA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7ADC783-8066-45D2-ACD1-06153F24FA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAA9508-1505-4082-A130-1801B8C18863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAA9508-1505-4082-A130-1801B8C18863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAA9508-1505-4082-A130-1801B8C18863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAA9508-1505-4082-A130-1801B8C18863}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{17167651-6A42-4F1D-B141-B2E463F000B0} = {F5DD78F6-FB95-415E-B914-F913B2B75EB9}
 		{A9FBC12C-6112-4A90-8870-59D005FADAF2} = {F5DD78F6-FB95-415E-B914-F913B2B75EB9}
 		{B7ADC783-8066-45D2-ACD1-06153F24FA4F} = {F5DD78F6-FB95-415E-B914-F913B2B75EB9}
+		{2EAA9508-1505-4082-A130-1801B8C18863} = {AB1E3A4D-3BCB-45C5-A78B-91955CF48665}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53308ED4-E7BF-4C4F-B0B5-B61A8EC8971E}
