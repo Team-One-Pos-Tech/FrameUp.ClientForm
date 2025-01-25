@@ -31,7 +31,7 @@ namespace FrameUp.ClientForm.Application.UsesCases
                 return new ServiceResponse { IsSuccess = false, Message = "User already exists." };
 
             var hashedPassword = _passwordHasher.HashPassword(request.Password);
-            var user = new User { Name = request.Name, Email = request.Email, Password = hashedPassword };
+            var user = new User (request.Name, request.Email, hashedPassword);
 
             await _userRepository.AddUserAsync(user);
             return new ServiceResponse { IsSuccess = true, Message = "User registered successfully." };
@@ -45,7 +45,7 @@ namespace FrameUp.ClientForm.Application.UsesCases
         public async Task<ServiceResponse> LoginAsync(LoginRequest request)
         {
             var user = await _userRepository.GetUserByEmailAsync(request.Email);
-            if (user == null || !_passwordHasher.VerifyPassword(user.Password, request.Password))
+            if (user == null || _passwordHasher.VerifyHashedPassword(user.Password, request.Password) != PasswordVerificationResult.Success)               
                 return new ServiceResponse { IsSuccess = false, Message = "Invalid credentials." };
 
             var token = _tokenService.GenerateToken(user);
