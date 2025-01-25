@@ -1,0 +1,6 @@
+@FrameUp.ClientForm.Api_HostAddress = http://localhost:5119
+
+GET {{FrameUp.ClientForm.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
