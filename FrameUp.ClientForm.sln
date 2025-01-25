@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameUp.ClientForm.Infra", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D48F1407-336D-41FF-804C-DC3D46275A85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Test", "test\FrameUp.ClientForm.Test.csproj", "{8CFDA217-4A15-423F-93AB-B5CA90901B39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameUp.ClientForm.Test", "test\FrameUp.ClientForm.Test\FrameUp.ClientForm.Test.csproj", "{8CFDA217-4A15-423F-93AB-B5CA90901B39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
