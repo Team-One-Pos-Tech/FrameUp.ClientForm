@@ -1,36 +1,35 @@
-﻿using FrameUp.ClientForm.Domain.Entities;
+﻿using MongoDB.Driver;
+using FrameUp.ClientForm.Domain.Entities;
 using FrameUp.ClientForm.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FrameUp.ClientForm.Infra.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly ClientFormDbContext _context;
+        private readonly IMongoCollection<User> _users;
 
-        public UserRepository(ClientFormDbContext context)
+        public UserRepository(IMongoClient client)
         {
-            _context = context;
+            var database = client.GetDatabase("YourDatabaseName"); //to do
+            _users = database.GetCollection<User>("Users");
         }
 
         public async Task<bool> UserExistsAsync(string email)
         {
-            return await _context.Users.AnyAsync(u => u.Email == email);
+            var filter = Builders<User>.Filter.Eq(u => u.Email, email);
+            return await _users.Find(filter).AnyAsync();
         }
 
         public async Task AddUserAsync(User user)
         {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            await _users.InsertOneAsync(user);
         }
 
         public async Task<User> GetUserByEmailAsync(string email)
         {
-            return await _context.Users.SingleOrDefaultAsync(u => u.Email == email);
+            var filter = Builders<User>.Filter.Eq(u => u.Email, email);
+            return await _users.Find(filter).SingleOrDefaultAsync();
         }
     }
 }
