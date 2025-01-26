@@ -43,7 +43,7 @@ namespace FrameUp.ClientForm.Test
             };
 
             _mockUserRepository.Setup(repo => repo.UserExistsAsync(request.Email))
-                               .ReturnsAsync(true); // Simula que o usuário já existe
+                               .ReturnsAsync(true); // Simula que o usuï¿½rio jï¿½ existe
 
             // Act
             var response = await _accountUseCase.RegisterAsync(request);
@@ -65,12 +65,12 @@ namespace FrameUp.ClientForm.Test
             };
 
             _mockUserRepository.Setup(repo => repo.UserExistsAsync(request.Email))
-                               .ReturnsAsync(false); // Simula que o usuário não existe
+                               .ReturnsAsync(false); // Simula que o usuÃ¡rio nÃ£o existe
             _mockPasswordHasher.Setup(ph => ph.HashPassword(request.Password))
                                .Returns("hashedPassword"); // Simula o hash da senha
 
             _mockUserRepository.Setup(repo => repo.AddUserAsync(It.IsAny<User>()))
-                               .Returns(Task.CompletedTask); // Simula a adição do usuário
+                               .Returns(Task.CompletedTask); // Simula a adiÃ§Ã£o do usuÃ¡rio
 
             // Act
             var response = await _accountUseCase.RegisterAsync(request);
@@ -93,7 +93,7 @@ namespace FrameUp.ClientForm.Test
             _mockUserRepository.Setup(repo => repo.GetUserByEmailAsync(request.Email))
                                .ReturnsAsync(new User("John Doe", request.Email, "hashedPassword"));
             _mockPasswordHasher.Setup(ph => ph.VerifyHashedPassword("hashedPassword", request.Password))
-                               .Returns(PasswordVerificationResult.Failed); // Simula senha inválida
+                               .Returns(PasswordVerificationResult.Failed); // Simula senha invï¿½lida
 
             // Act
             var response = await _accountUseCase.LoginAsync(request);
@@ -117,9 +117,9 @@ namespace FrameUp.ClientForm.Test
             _mockUserRepository.Setup(repo => repo.GetUserByEmailAsync(request.Email))
                                .ReturnsAsync(user);
             _mockPasswordHasher.Setup(ph => ph.VerifyHashedPassword("hashedPassword", request.Password))
-                               .Returns(PasswordVerificationResult.Success); // Simula senha válida
+                               .Returns(PasswordVerificationResult.Success); // Simula senha vï¿½lida
             _mockTokenService.Setup(ts => ts.GenerateToken(user))
-                             .Returns("validToken"); // Simula a geração do token
+                             .Returns("validToken"); // Simula a geraï¿½ï¿½o do token
 
             // Act
             var response = await _accountUseCase.LoginAsync(request);
@@ -136,7 +136,7 @@ namespace FrameUp.ClientForm.Test
             // Arrange
             var email = "nonexistent.user@example.com";
             _mockUserRepository.Setup(repo => repo.UserExistsAsync(email))
-                               .ReturnsAsync(false); // Simula que o usuário não existe
+                               .ReturnsAsync(false); // Simula que o usuï¿½rio nï¿½o existe
 
             // Act
             var exists = await _accountUseCase.UserExistsAsync(email);
@@ -151,7 +151,7 @@ namespace FrameUp.ClientForm.Test
             // Arrange
             var email = "john.doe@example.com";
             _mockUserRepository.Setup(repo => repo.UserExistsAsync(email))
-                               .ReturnsAsync(true); // Simula que o usuário existe
+                               .ReturnsAsync(true); // Simula que o usuï¿½rio existe
 
             // Act
             var isValid = await _accountUseCase.ValidateAccountAsync(email);
@@ -166,7 +166,7 @@ namespace FrameUp.ClientForm.Test
             // Arrange
             var email = "nonexistent.user@example.com";
             _mockUserRepository.Setup(repo => repo.UserExistsAsync(email))
-                               .ReturnsAsync(false); // Simula que o usuário não existe
+                               .ReturnsAsync(false); // Simula que o usuï¿½rio nï¿½o existe
 
             // Act
             var isValid = await _accountUseCase.ValidateAccountAsync(email);
