@@ -1,0 +1,17 @@
+on: [ push ]
+jobs:
+  build-and-test:
+    uses: Team-One-Pos-Tech/FrameUp.SharedWorkFlows/.github/workflows/build.yml@main
+    with:
+      solution-name: "FrameUp.ClientForm.sln"
+      api-project-name: "FrameUp.ClientForm.Api"
+      sonar-project-key: "Team-One-Pos-Tech_FrameUp.ClientForm"
+    secrets:
+      sonar-token: ${{secrets.SONAR_TOKEN}}
+  
+  docker-setup:
+    needs: build-and-test
+    uses: Team-One-Pos-Tech/FrameUp.SharedWorkFlows/.github/workflows/dockerize.yml@main
+    with:
+      image-name: "team-one-pos-tech/frameup-client-form"
+      api-entrypoint-binary: "FrameUp.ClientForm.Api.dll"
